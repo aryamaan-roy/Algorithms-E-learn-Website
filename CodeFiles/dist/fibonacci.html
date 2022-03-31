@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>AAD Project</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <!--<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead" style="background-image: url('assets/img/bg-image-intro.jpg');">
+        <div class="container">
+            <font color="yellow">
+                <!--<div class="masthead-subheading">Computability in Algorithms</div>-->
+            </font>
+
+            <div class="masthead-heading text-uppercase">Fibonacci Numbers</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Let's Learn</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Concept of Countability in Algorithms</h2><br><br>
+            </div>
+            <font size="5">
+                <p>
+
+                <h3>We take the following factors about an algorithm into account before solving:</h3>
+
+                <p>
+                    <ul>
+                        <li>Accuracy</li>
+                        <li>Time Complexity</li>
+                   <li>Methods to increase efficiency (make better)</li> </ul>
+                </p>
+                <hr><br>
+
+
+                <h3>Analysis of Fibonacci Sequence:</h3>
+              
+                <p><ul><li></li>
+                    <b>Sequence : </b><br>
+                   \[ F_n = \begin{cases}
+   F_{n-1} + F_{n-2} &\text{if } n>1 \\
+   1 &\text{if } n=1
+  \\ 0 &\text{if }n=0
+\end{cases} \]
+<li>Fibonacci numbers grow as powers of 2. \[ \large F_n \approx 2^{0.694n}$ \]</li>
+                </p>
+                <hr><br>
+                <p>
+                <h3>Algorithm 1 (Exponential): </h3>
+            
+                There are computational problems that computer cannot solve.
+                <br>
+                  We recursively calculate $fib(n)$ as in the following pseudo code:
+                  
+                  <pre><code> 
+function fibonacci(n):
+    if n = 0:
+        return 0
+    if n = 1:
+        return 1
+    return fib1(n − 1) + fib1(n − 2)
+                    </code></pre>
+                </p>
+                <hr><br>
+
+                <h3>Algorithm 2 (Polynomial algorithm): </h3>
+    
+                We convert the above code to iterative method which eliminates overlapping computations thus reducing time complexity
+                <br>
+                  
+                  
+                  <pre><code> 
+function fibonacci(n):
+    if n = 0 :
+         return 0
+    Create array F[n];
+    F[0]=0, F[1]=1;
+    for i = 2 to n:
+        F[i] = F[i-1] + F[i-2];
+    return F[n];
+                    </code></pre>
+                    <br>
+                    The addition is O(n) steps and loop runs n times<br>
+<b>Hence Time Complexity : \[ O(n^2) \] </b>
+                </p>
+                <hr><br>
+
+
+                <h3>Algorithm 3 (using matrices): </h3>
+    
+                We notice the following patters to calculate fib(n):
+
+                <br>
+                  
+                \[
+                \begin{pmatrix}
+                F_1\\
+                F_2
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                0 & 1 \\
+                1 & 1
+              \end{pmatrix}
+              .
+              \begin{pmatrix}
+                F_0\\
+                F_1
+              \end{pmatrix} \]
+              <br>
+              Generalizing above:
+              <br>
+              \[ \begin{pmatrix}
+                F_n\\
+                F_{n+1}
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                0 & 1 \\
+                1 & 1
+              \end{pmatrix}^n
+              .
+              \begin{pmatrix}
+                F_0\\
+                F_1
+              \end{pmatrix} \]
+              
+              
+              
+                    <br>
+                    Time Complexity = O(M(n)log(n)) where M : Time to multiply 2 n bit numbers 
+                </p>
+                <hr><br>
+
+                <h3>Algorithm 4: (Direct Formula) :</h3>
+    
+            
+                <br>
+                  
+                  
+                \[ F_n = \frac 1 {\sqrt{5}}.  \bigg(\frac {1+{\sqrt{5}}} 2\bigg)^n
+                - \frac 1 {\sqrt{5}}.   
+                \bigg(\frac {1-{\sqrt{5}}} 2\bigg)^n \]
+                <br>
+                Problem: There are accuracy issues due to irrational parts, also large arrays are required to multiply digits accurately.
+                
+                </p>
+                <hr><br>
+
+
+            </font>
+        </div>
+    </section>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+
+</html>

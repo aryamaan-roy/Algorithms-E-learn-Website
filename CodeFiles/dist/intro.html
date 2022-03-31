@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>AAD Project</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <!--<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead" style="background-image: url('assets/img/bg-image-intro.jpg');">
+        <div class="container">
+            <font color="yellow">
+                <div class="masthead-subheading">Computability in Algorithms</div>
+            </font>
+
+            <div class="masthead-heading text-uppercase">Introducing basics</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Let's Learn</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Concept of Countability in Algorithms</h2><br><br>
+            </div>
+            <font size="5">
+                <p>
+
+                <h3> COUNTABLE SETS</h3>
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">Any infinite set is called countable or countably inifinite set if we can find a
+                        bijection
+                        f: N -> S, from the natural numbers to set S.
+                    </p>
+                </blockquote>
+                <p>
+                    <b><i>Theorem : </i></b>
+                    The set of finite length bit strings {0,1}* is countable.
+                    <br>
+                    <b>PROOF : </b>We can easily create a bijection from natural numbers to binary strings just by
+                    mapping the decimal form to binary form. And hence we can easily see that the binary relation is
+                    formed here and hence the finite length bit strings {0,1}* is countable.
+                </p>
+                <hr><br>
+                <h3> UNCOUNTABLE SETS</h3>
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">Any infinite set is called uncountable if we cant establish any bijection relation
+                        between set of natural numbers and the given set.
+                    </p>
+                </blockquote>
+                <p>
+                    <b><i>Theorem : </i></b>
+                    The power set of bit strings P({0,1}*) is uncountable.
+                    <br>
+                    <b>PROOF : </b>
+                <ul>
+                    <li>Lets define function f(x):{0,1}* -> {0,1} such that for each subset S of the set P, we will
+                        define it with a binary string such that value 1 for the elements present in the set and value
+                        0 for elements not present in the set.
+                    <li>Now lets assume that set P is a countable set, then we can list all the binary language as
+                        a sequence L1, L2, L3, L4 ..... supposedly containing every language of bit strings.
+
+                    <li>If we list them in a table then we can easily see that we can use Cantor's diabolical
+                        diagonal property to create one such binary string using the diagonal elements of the table such
+                        that it does not exist in the bijective relation table. And hence we found atleast one binary
+                        string
+                        in set P which cannot be mapped to natural numbers using any bijective relation. And hence the
+                        set
+                        P, power set of the binary strings is uncountable.
+                </ul>
+                </p>
+                <hr><br>
+                <p>
+                <h3> CONNECTION TO COMPUTING</h3>
+                <b><i>Theorem : </i></b>
+                There are computational problems that computer cannot solve.
+                <br>
+                <b>PROOF : </b>
+                <ul>
+                    <li>We simply have to show that there are more computational problems than computer programs.
+
+                    <li>We very well know that every computer program can be represented as a binary string and hence
+                        the set of
+                        computer programs is countable.
+                    <li>But since we know that problems are membership queries in languages hence the set of all
+                        problems has
+                        the same cardinality as the P({0,1}*), and since the power set is uncountable it is clear that
+                        number of
+                        computational problems are more than computer programs and hence there exists atleast one
+                        computational problem which cannot be solved using computer program.
+                </ul>
+                </p>
+                <hr><br>
+
+                <p>
+                    <h3>CHURCH TURING HYPOTHESIS</h3>
+                    According to this hypothesis algorithms are described as nothing but, the turing machine.<br>
+                    <ul>
+                        <li> <b><i> Machines are not omnipresent :</i></b>It takes non zero time to retrieve data from far off locations.
+                            Because, very large memories are inherently sequential.
+    
+                        <li><b><i>Machines are not omniscient : </i></b> Only finite information can be stored/retrieved from finite
+                            volume because, of finite set of tape symbols.
+                            <li><b><i>Machines are not omnipotent :</i></b> A finite length code only exerts finite amount of control,
+                                because only finite set of control states can be loaded in finite tape of symbols.
+                    </ul>
+                    </p>
+                    <hr><br>
+
+
+                <h3> TURING MACHINE
+                -- SIMPLEST PROGRAMMING LANGUAGE</h3>
+<p>
+                We can say that turing machine is the most simplest form of algorithm representation. Turing machine
+                mainly consists of 7 Tuples. </p>
+                </p>
+            </font>
+        </div>
+    </section>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+
+</html>
